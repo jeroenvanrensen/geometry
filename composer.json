@@ -1,0 +1,17 @@
+{
+    "name": "jeroenvanrensen/geometry",
+    "description": "Package that renders geometric SVG figures",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "JeroenvanRensen\\Geometry\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jeroen van Rensen"
+        }
+    ],
+    "require": {}
+}
