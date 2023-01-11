@@ -13,5 +13,15 @@
             "name": "Jeroen van Rensen"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "pestphp/pest": "^1.22"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/pest"
+    }
 }
