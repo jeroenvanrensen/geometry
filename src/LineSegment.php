@@ -6,7 +6,8 @@ class LineSegment extends Item
 {
     public function __construct(
         public Coordinate $from,
-        public Coordinate $to
+        public Coordinate $to,
+        public string $color
     ) {
     }
 
@@ -17,6 +18,6 @@ class LineSegment extends Item
         $x2 = $this->getXCoord($figure, $this->to->x);
         $y2 = $this->getYCoord($figure, $this->to->y);
 
-        return "<line x1=\"{$x1}\" y1=\"{$y1}\" x2=\"{$x2}\" y2=\"{$y2}\" stroke=\"black\" stroke-width=\"2\" />";
+        return "<line x1=\"{$x1}\" y1=\"{$y1}\" x2=\"{$x2}\" y2=\"{$y2}\" stroke=\"{$this->color}\" stroke-width=\"2\" />";
     }
 }

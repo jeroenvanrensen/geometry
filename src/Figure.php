@@ -31,8 +31,8 @@ class Figure
         return $svg;
     }
 
-    public function lineSegment(array $from, array $to): void
+    public function lineSegment(array $from, array $to, string $color = '#000000'): void
     {
-        $this->items[] = new LineSegment(new Coordinate($from), new Coordinate($to));
+        $this->items[] = new LineSegment(new Coordinate($from), new Coordinate($to), $color);
     }
 }

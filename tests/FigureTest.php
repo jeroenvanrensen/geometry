@@ -20,5 +20,11 @@ it('can customize the background color', function () {
 it('can plot a line segment', function () {
     $figure = new Figure(-200, 200, -200, 200);
     $figure->lineSegment([100, 50], [200, 200]);
-    expect($figure->render())->toBe('<svg viewBox="0 0 400 400" style="background: #FFFFFF; width: 400px;"><line x1="300" y1="150" x2="400" y2="0" stroke="black" stroke-width="2" /></svg>');
+    expect($figure->render())->toBe('<svg viewBox="0 0 400 400" style="background: #FFFFFF; width: 400px;"><line x1="300" y1="150" x2="400" y2="0" stroke="#000000" stroke-width="2" /></svg>');
+});
+
+it('can plot a line segment with a color', function () {
+    $figure = new Figure(0, 200, 0, 200);
+    $figure->lineSegment([100, 50], [200, 200], color: '#00FF00');
+    expect($figure->render())->toBe('<svg viewBox="0 0 200 200" style="background: #FFFFFF; width: 200px;"><line x1="100" y1="150" x2="200" y2="0" stroke="#00FF00" stroke-width="2" /></svg>');
 });
