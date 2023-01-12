@@ -12,12 +12,15 @@ class Figure
 
     public int $yMax;
 
-    public function __construct(int $xMin, int $xMax, int $yMin, int $yMax)
+    public string $background;
+
+    public function __construct(int $xMin, int $xMax, int $yMin, int $yMax, string $background = '#FFFFFF')
     {
         $this->xMin = $xMin;
         $this->xMax = $xMax;
         $this->yMin = $yMin;
         $this->yMax = $yMax;
+        $this->background = $background;
     }
 
     public function render(): string
@@ -26,7 +29,7 @@ class Figure
 
         $height = abs($this->yMax - $this->yMin);
 
-        $svg = "<svg viewBox=\"0 0 {$width} {$height}\" style=\"background: white; width: {$width}px;\">";
+        $svg = "<svg viewBox=\"0 0 {$width} {$height}\" style=\"background: {$this->background}; width: {$width}px;\">";
 
         $svg .= '</svg>';
 
