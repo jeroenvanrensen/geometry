@@ -4,23 +4,13 @@ namespace JeroenvanRensen\Geometry;
 
 class Figure
 {
-    public int $xMin;
-
-    public int $xMax;
-
-    public int $yMin;
-
-    public int $yMax;
-
-    public string $background;
-
-    public function __construct(int $xMin, int $xMax, int $yMin, int $yMax, string $background = '#FFFFFF')
-    {
-        $this->xMin = $xMin;
-        $this->xMax = $xMax;
-        $this->yMin = $yMin;
-        $this->yMax = $yMax;
-        $this->background = $background;
+    public function __construct(
+        public int $xMin,
+        public int $xMax,
+        public int $yMin,
+        public int $yMax,
+        public string $background = '#FFFFFF'
+    ) {
     }
 
     public function render(): string
