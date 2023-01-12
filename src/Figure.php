@@ -9,7 +9,8 @@ class Figure
         public int $xMax,
         public int $yMin,
         public int $yMax,
-        public string $background = '#FFFFFF'
+        public string $background = '#FFFFFF',
+        public array $items = []
     ) {
     }
 
@@ -21,8 +22,17 @@ class Figure
 
         $svg = "<svg viewBox=\"0 0 {$width} {$height}\" style=\"background: {$this->background}; width: {$width}px;\">";
 
+        foreach ($this->items as $item) {
+            $svg .= $item->render($this);
+        }
+
         $svg .= '</svg>';
 
         return $svg;
+    }
+
+    public function lineSegment(array $from, array $to): void
+    {
+        $this->items[] = new LineSegment(new Coordinate($from), new Coordinate($to));
     }
 }
